@@ -7,7 +7,7 @@
 <p align="center">
   <b>Phocinae</b>（海豹亚科）是一族本地 typed decision 模型与工具：BERT 系 System 1 引擎，
   以结构化输出（choice / score / noul）替代 LLM 自由文本做决策——0 token、不联网、数据不出本机，
-  毫秒级延迟（RTX 5090 fp16 实测 18.6ms/决策），同参数级公开 typed-decisions 最高分（en 0.797 / zh 0.789）。
+  毫秒级延迟（RTX 5090 fp16 实测 21.0ms/决策），同参数级公开 typed-decisions 最高分（en 0.906 / zh 0.848，zh 为机译用例）。
 </p>
 
 ## 模型 Models
