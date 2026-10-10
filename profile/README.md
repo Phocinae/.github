@@ -33,5 +33,3 @@
 - ModelScope: [modelscope.cn/models/PerryLink/Phocinae-Largha-150M-v1](https://modelscope.cn/models/PerryLink/Phocinae-Largha-150M-v1)
 - PyPI: [phocinae-server](https://pypi.org/project/phocinae-server/) · [phocinae-guard](https://pypi.org/project/phocinae-guard/) · [phocinae-mcp](https://pypi.org/project/phocinae-mcp/)
 - npm: [dsh-phocinae](https://www.npmjs.com/package/dsh-phocinae)
-
-*一斑见全豹，一点定全局。*
