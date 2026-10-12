@@ -18,18 +18,40 @@
 
 ## 工具 Tools
 
-| 仓库 | 说明 |
-|---|---|
-| [phocinae-server](https://github.com/Phocinae/phocinae-server) | 本地推理服务，TypeSafe System One 兼容协议 `/v1/systemone` |
-| [phocinae-guard](https://github.com/Phocinae/phocinae-guard) | 命令/工具调用审批门（fail-closed，deny 默认） |
-| [phocinae-mcp](https://github.com/Phocinae/phocinae-mcp) | MCP server：gate / classify / route / score |
-| [dsh-phocinae](https://github.com/Phocinae/dsh-phocinae) | DeepSeek Harness（dsh）本地审批门插件 |
-| [codebuddy-phocinae](https://github.com/Phocinae/codebuddy-phocinae) | CodeBuddy 决策插件 |
-| [workbuddy-phocinae](https://github.com/Phocinae/workbuddy-phocinae) | WorkBuddy 决策插件 |
+**推理服务与审批内核**
+
+| 仓库 | 说明 | 安装 |
+|---|---|---|
+| [phocinae-server](https://github.com/Phocinae/phocinae-server) | 本地推理服务，TypeSafe System One 兼容协议 `/v1/systemone` | `pip install phocinae-server` |
+| [phocinae-guard](https://github.com/Phocinae/phocinae-guard) | 命令审批门：L0 离线确定性表先定夺、灰区才问模型，**fail-closed** | `pip install phocinae-guard` |
+| [phocinae-mcp](https://github.com/Phocinae/phocinae-mcp) | MCP server：`gate` / `classify` / `route` / `score`，双代协议（2026-07-28 + 2024-11-05） | `pip install phocinae-mcp` |
+
+**客户端与 SDK**
+
+| 仓库 | 说明 | 安装 |
+|---|---|---|
+| [phocinae-cli](https://github.com/Phocinae/phocinae-cli) | 一行命令本地决策：`decide` / `classify` / `route` / `score` / `gate` / `ping`；退出码即判定（allow=0 / deny=2 / ask=3） | `pip install phocinae-cli` |
+| [phocinae-js](https://github.com/Phocinae/phocinae-js) | TypeScript 客户端，零运行时依赖，内置与 guard 同源的 L0 离线放行门 | `npm install @phocinae/js` |
+
+**Harness / IDE 插件**
+
+| 仓库 | 说明 | 装法 |
+|---|---|---|
+| [dsh-phocinae](https://github.com/Phocinae/dsh-phocinae) | DeepSeek Harness 插件：`phocinae_ask` / `phocinae_gate` 工具 + PreToolUse 审批门 | `npm install dsh-phocinae` |
+| [codebuddy-phocinae](https://github.com/Phocinae/codebuddy-phocinae) | 腾讯 CodeBuddy 插件：PreToolUse 硬闸门 + 决策技能 | `/plugin install codebuddy-phocinae@phocinae-codebuddy-marketplace` |
+| [codebuddy-marketplace](https://github.com/Phocinae/codebuddy-marketplace) | CodeBuddy 自建市场清单（先 add 本仓，再装上面的插件） | `/plugin marketplace add Phocinae/codebuddy-marketplace` |
+| [workbuddy-phocinae](https://github.com/Phocinae/workbuddy-phocinae) | 腾讯 WorkBuddy 连接器 + 技能包：文档分类 / 审批预判 / 任务路由 / 质量 gate | 见仓库 README |
 
 ## 链接 Links
 
 - Model card: [huggingface.co/Phocinae/Phocinae-Largha-150M-v1](https://huggingface.co/Phocinae/Phocinae-Largha-150M-v1)
 - ModelScope: [modelscope.cn/models/PerryLink/Phocinae-Largha-150M-v1](https://modelscope.cn/models/PerryLink/Phocinae-Largha-150M-v1)
-- PyPI: [phocinae-server](https://pypi.org/project/phocinae-server/) · [phocinae-guard](https://pypi.org/project/phocinae-guard/) · [phocinae-mcp](https://pypi.org/project/phocinae-mcp/)
-- npm: [dsh-phocinae](https://www.npmjs.com/package/dsh-phocinae)
+- PyPI: [phocinae-server](https://pypi.org/project/phocinae-server/) · [phocinae-guard](https://pypi.org/project/phocinae-guard/) · [phocinae-mcp](https://pypi.org/project/phocinae-mcp/) · [phocinae-cli](https://pypi.org/project/phocinae-cli/)
+- npm: [dsh-phocinae](https://www.npmjs.com/package/dsh-phocinae) · [@phocinae/js](https://www.npmjs.com/package/@phocinae/js)
+- MCP Registry: [`io.github.Phocinae/phocinae-mcp`](https://registry.modelcontextprotocol.io/v0/servers?search=phocinae)
+
+## 安全取舍 Security posture
+
+- **审批门默认 fail-closed**：服务不可达、应答异常、解释器缺失 —— 一律阻断，绝不静默放行。
+- **确定性优先**：常见危险命令由离线表毫秒级拦下；150M 权重未做命令审批域校准，因此模型只用于灰区。
+- **全程本机**：服务默认只监听 `127.0.0.1`；判定状态含工具输出原文，故不鼓励暴露到网络。
