@@ -2,6 +2,8 @@
 
 Last reviewed: 2026-10-20.
 
+CI status (2026-10-20): **20/20 repositories, 0 latest-run failures.** `dsh-phocinae` Publish is green; `phocinae-server` 0.1.8 is published with a self-consistent `__version__`; the model gallery audit and `phocinae-formulate` CI are green.
+
 Discovery: `dsh-phocinae` is on dshfind; `dsh-batch-triage`, `dsh-context-verdict` and `dsh-evidence` received the `dsh-plugin`, `deepseek-harness`, `dsh` and `cordis-plugin` topics on 2026-10-20, so the next dshfind (02:17 UTC) and dsh.market (06:00 local) syncs can pick them up. `dsh-phocinae-screen` stays out of the listings because it is explicitly not for release.
 
 ## Status
@@ -9,15 +11,15 @@ Discovery: `dsh-phocinae` is on dshfind; `dsh-batch-triage`, `dsh-context-verdic
 | Project | Kind | README | Status / action |
 |---|---|---|---|
 | `Phocinae-Largha-150M-v1` | model | model card | Keep as source of weights; link from every tool. |
-| `phocinae-server` | inference server | install + API | Active. |
+| `phocinae-server` | inference server | install + API | Active; **0.1.8** published 2026-10-20 (wheel `__version__` fix). |
 | `phocinae-guard` | approval gate | install + usage | Active. |
 | `phocinae-rulepack` | deterministic rules | install + API | Active. |
 | `phocinae-publish-gate` | pre-publication checks | install added | Active. |
 | `phocinae-mcp` | MCP server | local-build install added | Active; explicit that this is the local enhanced build. |
 | `phocinae-cli` | CLI | install + usage | Active. |
 | `phocinae-js` | TypeScript client | install + API | Active. |
-| `phocinae-formulate` | measurement harness | install + method | Active; research tool. |
-| `dsh-phocinae` | DSH plugin | **rewritten** | Flagship. Quick start, examples, config, security, rc.2 range. |
+| `phocinae-formulate` | measurement harness | install + method | Active; CI green after ignoring the generated `replay.json`. |
+| `dsh-phocinae` | DSH plugin | **rewritten, 5 languages** | Flagship. Quick start, examples, config, security, rc.2 range; Publish green; dshfind listed. |
 | `dsh-batch-triage` | DSH plugin | quick start added | Active. |
 | `dsh-context-verdict` | DSH plugin | quick start added | Active. |
 | `dsh-evidence` (package `dsh-preclaim`) | DSH plugin | quick start added | Active; clarify the repo/package naming at the top. |
