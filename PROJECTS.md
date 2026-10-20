@@ -2,6 +2,8 @@
 
 Last reviewed: 2026-10-20.
 
+Discovery: `dsh-phocinae` is on dshfind; `dsh-batch-triage`, `dsh-context-verdict` and `dsh-evidence` received the `dsh-plugin`, `deepseek-harness`, `dsh` and `cordis-plugin` topics on 2026-10-20, so the next dshfind (02:17 UTC) and dsh.market (06:00 local) syncs can pick them up. `dsh-phocinae-screen` stays out of the listings because it is explicitly not for release.
+
 ## Status
 
 | Project | Kind | README | Status / action |
