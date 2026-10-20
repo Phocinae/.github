@@ -4,7 +4,7 @@ Last reviewed: 2026-10-20.
 
 CI status (2026-10-20): **20/20 repositories, 0 latest-run failures.** `dsh-phocinae` Publish is green; `phocinae-server` 0.1.8 is published with a self-consistent `__version__`; the model gallery audit and `phocinae-formulate` CI are green.
 
-Discovery: `dsh-phocinae` is on dshfind; `dsh-batch-triage`, `dsh-context-verdict` and `dsh-evidence` received the `dsh-plugin`, `deepseek-harness`, `dsh` and `cordis-plugin` topics on 2026-10-20, so the next dshfind (02:17 UTC) and dsh.market (06:00 local) syncs can pick them up. `dsh-phocinae-screen` stays out of the listings because it is explicitly not for release.
+Discovery: `dsh-phocinae` is on dshfind; `dsh-batch-triage`, `dsh-context-verdict` and `dsh-evidence` received the `dsh-plugin`, `deepseek-harness`, `dsh` and `cordis-plugin` topics on 2026-10-20, so the next dshfind (02:17 UTC) and dsh.market (06:00 local) syncs can pick them up. `dsh-phocinae-screen` stays out of the listings because it is explicitly not for release. A 3-entry awesome-dsh-plugin PR (#8293) adds the three smaller plugins to the official Discover upstream; CI is running.
 
 ## Status
 
