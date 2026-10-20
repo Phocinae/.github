@@ -37,10 +37,28 @@
 
 | 仓库 | 说明 | 装法 |
 |---|---|---|
-| [dsh-phocinae](https://github.com/Phocinae/dsh-phocinae) | DeepSeek Harness 插件：`phocinae_ask` / `phocinae_gate` 工具 + PreToolUse 审批门 | `npm install dsh-phocinae` |
+| [dsh-phocinae](https://github.com/Phocinae/dsh-phocinae) | DeepSeek Harness 插件：`phocinae_ask` / `phocinae_gate` 工具 + PreToolUse 审批门 | `dsh plugin --profile web add dsh-phocinae@0.2.5` |
 | [codebuddy-phocinae](https://github.com/Phocinae/codebuddy-phocinae) | 腾讯 CodeBuddy 插件：PreToolUse 硬闸门 + 决策技能 | `/plugin install codebuddy-phocinae@phocinae-codebuddy-marketplace` |
 | [codebuddy-marketplace](https://github.com/Phocinae/codebuddy-marketplace) | CodeBuddy 自建市场清单（先 add 本仓，再装上面的插件） | `/plugin marketplace add Phocinae/codebuddy-marketplace` |
 | [workbuddy-phocinae](https://github.com/Phocinae/workbuddy-phocinae) | 腾讯 WorkBuddy 连接器 + 技能包：文档分类 / 审批预判 / 任务路由 / 质量 gate | 见仓库 README |
+
+### DeepSeek Harness 插件
+
+| 仓库 | 说明 | 状态 / 装法 |
+|---|---|---|
+| [dsh-phocinae](https://github.com/Phocinae/dsh-phocinae) | 本机决策模型 + `phocinae_ask` / `phocinae_gate` + pre-execute 审批门 | `dsh plugin --profile web add dsh-phocinae@0.2.5` |
+| [dsh-batch-triage](https://github.com/Phocinae/dsh-batch-triage) | 规则先分诊，规则放不下的 ticket 标为 `needs_review` | `dsh plugin --profile web add dsh-batch-triage@0.1.2` |
+| [dsh-context-verdict](https://github.com/Phocinae/dsh-context-verdict) | compaction 前的会话级“是否有未落地状态”判定 | `dsh plugin --profile web add dsh-context-verdict@0.1.2` |
+| [dsh-evidence](https://github.com/Phocinae/dsh-evidence) | `dsh-preclaim`：提交/推送前的 claim 与真实执行证据核对 | `dsh plugin --profile web add dsh-preclaim@0.1.2` |
+| [dsh-phocinae-screen](https://github.com/Phocinae/dsh-phocinae-screen) | 上下文筛选的测量 harness；**NOT FOR RELEASE** | 不发布；见仓库说明 |
+
+### 规则与发布检查
+
+| 仓库 | 说明 |
+|---|---|
+| [phocinae-rulepack](https://github.com/Phocinae/phocinae-rulepack) | 确定性规则包引擎：读台账、套版本化规则、只输出差异 |
+| [phocinae-publish-gate](https://github.com/Phocinae/phocinae-publish-gate) | 媒体交付物发布前检查；判定交给 `phocinae-rulepack`，不写目标 |
+| [phocinae-formulate](https://github.com/Phocinae/phocinae-formulate) | 测量同一决策模型的不同问法：recall、校准与可用阈值 |
 
 ## 链接 Links
 
